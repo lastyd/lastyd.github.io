@@ -37,8 +37,60 @@
 
 <!-- Main content -->
 <div class="container">
-  <h1>Hello, world!</h1>
-  <p>Welcome to my website.</p>
+  <h1>Tutorial for R-exams package</h1>
+  <p>R-exams is an R package that allows educators to create randomized exams and quizzes. This tutorial will guide you through the process of creating a simple quiz using R-exams.
+
+Installation
+First, you need to install the R-exams package. You can do this by running the following command in R:
+
+r
+Copy code
+install.packages("exams")
+Creating a Simple Quiz
+Let's create a simple quiz that includes two multiple-choice questions. Here's the code for the first question:
+
+r
+Copy code
+mc1 <- list(
+  question = "What is the capital of France?",
+  correct = "Paris",
+  wrong = c("London", "Berlin", "Rome")
+)
+This creates a list that specifies the question, the correct answer, and three incorrect answers. Note that the correct answer should always be listed first.
+
+Here's the code for the second question:
+
+r
+Copy code
+mc2 <- list(
+  question = "What is the largest planet in our solar system?",
+  correct = "Jupiter",
+  wrong = c("Mars", "Venus", "Saturn")
+)
+Again, this creates a list that specifies the question, the correct answer, and three incorrect answers.
+
+Now we can combine these questions into a simple quiz:
+
+r
+Copy code
+quiz <- list(mc1, mc2)
+Generating the Quiz
+To generate the quiz, we can use the exams2html() function:
+
+r
+Copy code
+exams2html(quiz, file = "myquiz.html")
+This will create an HTML file called myquiz.html that includes the quiz.
+
+If you want to generate a PDF version of the quiz, you can use the exams2pdf() function:
+
+r
+Copy code
+exams2pdf(quiz, file = "myquiz.pdf")
+This will create a PDF file called myquiz.pdf that includes the quiz.
+
+Conclusion
+That's it! You've just created a simple quiz using R-exams. Of course, this is just the beginning - R-exams supports many more question types and options, including true/false questions, open-ended questions, and more complex exercises. With R-exams, you have the flexibility to create assessments that test a wide range of knowledge and skills, and the ability to generate multiple versions of an exam to ensure fairness and minimize cheating.</p>
 </div>
 
 <!-- Footer -->
